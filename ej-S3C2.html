@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            text-align:center;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        form {
+            border:2px solid black;
+            display:inline-block;
+            width:100%;
+            max-width:400px;
+            padding:20px;
+            background:gray;
+            margin-top:-20px;
+        }
+        input {
+            width:100%;
+            transition:all .5s ease;
+            border:2px solid black;
+            max-width: 400px;
+        }
+        input:focus {
+            outline:none;
+            box-shadow:0 0 10px white;
+        }
+        input:read-only {
+            background:lightgray;
+        }
+        input:invalid:focus {
+            border-color: red;
+        }
+        input:valid {
+            border-color: green;
+        }
+        select {
+            border:2px solid black;
+            width:100%;
+            max-width:400px;
+        }
+        select:focus {
+            outline:none;
+            box-shadow:0 0 10px white;
+        }
+        textarea {
+            max-width: 400px;
+            width:100%;
+            border:2px solid black;
+        }
+        textarea:focus {
+            outline:none;
+            box-shadow:0 0 10px white;
+        }
+        button {
+            padding:10px;
+            width:100%;
+            max-width:100%;
+            border:2px solid black;
+            font-size:16px;
+            cursor:pointer;
+        }
+        .gender {
+            width:auto;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Formulario</h1>
+    <form action="#">
+      <input
+        type="text"
+        placeholder="Nombre"
+        required
+        minlength="4"
+        maxlength="12"
+        pattern="2-(Salvador|Felipe)|1-(Mauricio|Jose)"
+      />
+      <br />
+      <br />
+      <input
+        type="text"
+        placeholder="Apellido"
+        required
+        minlength="3"
+        maxlength="20"
+      />
+      <br />
+      <br />
+      <input type="number" placeholder="Edad" required min="18" pattern="[0-9]{2}"/>
+      <br />
+      <br />
+      <input
+        type="email"
+        placeholder="Email"
+        required
+        readonly
+        value="admin@gmail.com"
+      />
+      <br />
+      <br />
+      <label for=""><b>Escoge tu genero:</b></label>
+      <br>
+      <input required class="gender" type="radio" name="genero"> Masculino
+      <input required class="gender" type="radio" name="genero"> Femenino
+      <br>
+      <br>
+      <select required name="hobbies" id="hobbies" multiple>
+        <option value="">Selecciona tu hobbie:</option>
+        <option value="1">Futbol</option>
+        <option value="2">Tennis</option>
+        <option value="3">Basket</option>
+      </select>
+      <br />
+      <br />
+      <select required name="country" id="country">
+        <option value="">Selecciona tu país</option>
+        <option value="1">Perú</option>
+        <option value="2">Brazil</option>
+        <option value="3">Venezuela</option>
+      </select>
+      <br />
+      <br />
+      <select required name="city" id="city">
+        <option value="">Selecciona tu ciudad</option>
+        <option value="1">Lima</option>
+        <option value="2">Callao</option>
+        <option value="3">Otros</option>
+      </select>
+      <br />
+      <br />
+      <select required name="district" id="district">
+        <option value="">Selecciona tu distrito</option>
+        <option value="1">Santiago de Surco</option>
+        <option value="2">Surquillo</option>
+        <option value="3">La Molina</option>
+        <option value="4">Miraflores</option>
+      </select>
+      <br />
+      <br />
+      <label for="comments">Comentarios:</label>
+      <br />
+      <textarea
+        required
+        name="comments"
+        id="comments"
+        cols="30"
+        rows="10"
+        placeholder="Ingresa tus comentarios"
+      ></textarea>
+      <br />
+      <br />
+      <button>Enviar</button>
+    </form>
+  </body>
+</html>
